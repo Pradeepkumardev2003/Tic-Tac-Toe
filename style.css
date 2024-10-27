@@ -1,0 +1,152 @@
+/* Global styles for elements */
+* {
+  color: white;
+  font-family: sans-serif;
+  transition: 0.25s ease-in-out;
+  user-select: none; /* Disable text selection */
+}
+
+/* Flex container for centering content */
+.align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Basic body styling */
+body {
+  background-image:linear-gradient(rgb(40, 48, 42),rgb(84, 87, 56));
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  text-align: center;
+  padding-top: 5vh; /* Add space at the top */
+}
+
+/* Container for turn indicator with a grid layout */
+.turn-container {
+  width: 85%;
+  max-width: 170px; /* Max width for larger screens */
+  height: 80px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  position: relative;
+}
+
+.turn-container h3 {
+  grid-column-start: 1;
+  grid-column-end: 3; /* Span across both columns */
+}
+
+/* Styling for the turn indicator boxes */
+.turn-container .turn-box {
+  border: 3px solid #f1f1e9;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Remove right border from even boxes to connect them */
+.turn-container .turn-box:nth-child(even) {
+  border-right: none;
+}
+
+/* Background for the turn indicator */
+.bg {
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 85px;
+  height: 30px;
+  background-color: #ff2e63;
+  z-index: -1; /* Ensure it's behind the text */
+}
+
+/* Main grid for the tic-tac-toe board */
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3x3 grid */
+  grid-template-rows: repeat(3, 1fr);
+  height: 50vw; /* Responsive height */
+  max-height: 250px; /* Maximum height */
+  max-width: 250px; /* Maximum width */
+  width: 50vw; /* Responsive width */
+  margin: 30px auto; /* Center grid */
+  border: 2px solid #e8e9df;
+}
+
+/* Styling for each grid box (tic-tac-toe square) */
+.box {
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 700;
+  border: 2px solid #e5e6e2;
+}
+
+/* Change background on hover */
+.box:hover {
+  background-color: #ff2e63;
+}
+
+/* Styling for the "Play Again" button */
+#play-again {
+  background-color: #ff2e63;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+/* Hover effect for the "Play Again" button */
+#play-again:hover {
+  padding: 10px 40px;
+  background-color: #08d9d6;
+  color: #000;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For devices with a width of 768px or less (tablets) */
+@media (max-width: 768px) {
+  .turn-container {
+    width: 90%; /* Increase width to take more space */
+  }
+
+  .main-grid {
+    width: 70vw; /* Make the grid larger on smaller screens */
+    height: 70vw; /* Ensure grid is still square */
+  }
+
+  .box {
+    font-size: 1.5rem; /* Decrease box font size */
+  }
+
+  #play-again {
+    font-size: 1rem; /* Adjust button font size */
+  }
+}
+
+/* For devices with a width of 480px or less (mobile devices) */
+@media (max-width: 480px) {
+  .turn-container {
+    width: 100%; /* Full width for smaller screens */
+    height: auto; /* Adjust height */
+  }
+
+  .main-grid {
+    width: 90vw; /* Larger grid for small devices */
+    height: 90vw; /* Keep it square */
+  }
+
+  .box {
+    font-size: 1.2rem; /* Further reduce font size */
+  }
+
+  #play-again {
+    font-size: 0.9rem; /* Adjust button font size */
+  }
+}

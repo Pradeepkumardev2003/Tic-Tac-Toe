@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe</title>
+  <!-- Link to external CSS for styling -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Turn Indicator Section -->
+  <div class="turn-container">
+    <h3>Turn For</h3>
+    <!-- Turn indicator for X -->
+    <div class="turn-box align">X</div>
+    <!-- Turn indicator for O -->
+    <div class="turn-box align">O</div>
+    <!-- Background slider for turn indication -->
+    <div class="bg align"></div>
+  </div>
+  
+  <!-- Main Game Grid -->
+  <div class="main-grid">
+    <!-- Individual boxes for the Tic Tac Toe grid -->
+    <div class="box align">0</div>
+    <div class="box align">1</div>
+    <div class="box align">2</div>
+    <div class="box align">3</div>
+    <div class="box align">4</div>
+    <div class="box align">5</div>
+    <div class="box align">6</div>
+    <div class="box align">7</div>
+    <div class="box align">8</div>
+  </div>
+  
+  <!-- Result Display -->
+  <h2 id="results"></h2>
+  
+  <!-- Button to restart the game -->
+  <button id="play-again">Play Again</button>
+  
+  <!-- Link to external JavaScript file for functionality -->
+  <script src="script.js"></script>
+</body>
+</html>
